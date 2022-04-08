@@ -19,6 +19,12 @@ pipeline{
        bat 'gradle test'
        }
       }
+      stage('Copy'){
+             steps{
+             echo 'Copy'
+             bat 'docker build .'
+             }
+            }
    stage('Deploy'){
     steps{
     echo 'Deploying'
