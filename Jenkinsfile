@@ -1,5 +1,5 @@
 pipeline{
-  agent any
+  agent { docker { image 'amazoncorretto:latest' } }
   stages{
    stage('Clone git'){
     steps{
