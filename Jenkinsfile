@@ -26,8 +26,3 @@ pipeline{
    }
   }
 }
-=======
-   }
-  }
-}
->>>>>>> origin/master
