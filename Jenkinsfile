@@ -10,15 +10,15 @@ pipeline{
    stage('Build'){
     steps{
     echo 'Build && test'
-    gradle build
-    gradle test
+    bat 'gradle build'
+    bat 'gradle test'
     }
    }
    stage('Deploy'){
     steps{
     echo 'Deploying'
      dir("build/libs"){
-      java -jar springboot-jenkins-0.0.1-SNAPSHOT.jar
+      bat 'java -jar springboot-jenkins-0.0.1-SNAPSHOT.jar'
     }
     }
    }
