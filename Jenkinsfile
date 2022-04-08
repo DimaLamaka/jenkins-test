@@ -18,11 +18,9 @@ pipeline{
     steps{
     echo 'Deploying'
      dir("build/libs"){
-      script{
       java -jar springboot-jenkins-0.0.1-SNAPSHOT.jar
-      }
     }
     }
    }
-  }
+ }
 }
