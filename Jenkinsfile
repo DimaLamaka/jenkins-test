@@ -1,6 +1,11 @@
 pipeline{
-  agent { docker { image 'amazoncorretto:latest' } }
+  agent { docker { image 'java:latest' } }
   stages{
+  stage('check'){
+      steps{
+      echo 'Check...'
+      bat 'java --version'
+      }
    stage('Clone git'){
     steps{
     echo 'Cloning...'
@@ -28,10 +33,9 @@ pipeline{
    stage('Deploy'){
     steps{
     echo 'Deploying'
-     /* dir("build/libs"){
+     dir("build/libs"){
       bat 'java -jar springboot-jenkins-0.0.1-SNAPSHOT.jar'
-    } */
-    bat 'app.jar'
+    }
     }
    }
  }
