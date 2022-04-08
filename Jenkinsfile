@@ -6,6 +6,7 @@ pipeline{
       echo 'Check...'
       bat 'java --version'
       }
+  }
    stage('Clone git'){
     steps{
     echo 'Cloning...'
@@ -39,5 +40,4 @@ pipeline{
     }
    }
  }
-}
 }
