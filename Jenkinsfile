@@ -25,9 +25,9 @@ pipeline{
        bat 'gradle test'
        }
       }
-   stage('Deploy'){
+   stage('Start'){
     steps{
-    echo 'Deploying'
+    echo 'Starting'
      dir("build/libs"){
       bat 'java -jar springboot-jenkins-0.0.1-SNAPSHOT.jar'
     }
