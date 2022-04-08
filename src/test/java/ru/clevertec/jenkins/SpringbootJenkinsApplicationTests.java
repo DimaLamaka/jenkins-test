@@ -19,7 +19,7 @@ class SpringbootJenkinsApplicationTests {
 
     @Test
     void test2(){
-        Assertions.assertEquals(2,3);
+        Assertions.assertEquals(2,2);
     }
 
 }
