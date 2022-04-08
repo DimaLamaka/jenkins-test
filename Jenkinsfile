@@ -9,11 +9,17 @@ pipeline{
    }
    stage('Build'){
     steps{
-    echo 'Build && test'
+    echo 'Build'
     bat 'gradle build'
     bat 'gradle test'
     }
    }
+    stage('Test'){
+       steps{
+       echo 'Test'
+       bat 'gradle test'
+       }
+      }
    stage('Deploy'){
     steps{
     echo 'Deploying'
