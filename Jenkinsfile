@@ -11,7 +11,6 @@ pipeline{
     steps{
     echo 'Build'
     bat 'gradle build'
-    bat 'gradle test'
     }
    }
     stage('Test'){
