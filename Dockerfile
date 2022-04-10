@@ -1,4 +1,4 @@
-FROM amazoncorretto:latest
+FROM amazoncorretto:11
 
 ADD ./build/libs/springboot-jenkins-0.0.1-SNAPSHOT.jar app.jar
 
