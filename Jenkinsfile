@@ -1,12 +1,6 @@
 pipeline{
   agent any
   stages{
-  stage('check'){
-      steps{
-      echo 'Check...'
-      bat 'java --version'
-      }
-  }
    stage('Clone git'){
     steps{
     echo 'Cloning...'
@@ -16,7 +10,7 @@ pipeline{
    stage('Build'){
     steps{
     echo 'Build'
-    bat 'gradle build'
+    bat 'gradle clean build'
     }
    }
     stage('Test'){
@@ -25,13 +19,17 @@ pipeline{
        bat 'gradle test'
        }
       }
-   stage('Start'){
+   stage('Docker build'){
     steps{
-    echo 'Starting'
-     dir("build/libs"){
-      bat 'java -jar springboot-jenkins-0.0.1-SNAPSHOT.jar'
-    }
+    echo 'Docker building'
+    bat 'docker build . -t jenkins/test:latest'
     }
    }
+   stage('start Docker build'){
+       steps{
+       echo 'starting Docker build'
+       bat 'docker run jenkins/test:latest'
+       }
+     }
  }
 }
