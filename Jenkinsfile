@@ -28,7 +28,7 @@ pipeline{
    stage('start Docker build'){
        steps{
        echo 'starting Docker build'
-       bat 'docker run -d -p 8888:8888 jenkins/test:latest'
+       bat 'docker run -d -p 8888:8081 jenkins/test:latest'
        }
      }
  }
